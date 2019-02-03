@@ -13,7 +13,6 @@ F2,T0013,footed,narrow,lower_lip,48,128.21,32,4
 F2,T0014,footed,narrow,tongue_tip,116,133.65,76,7.2
 F2,T0015,unfooted,broad,tongue_tip,92,67.23,60,4.1
 F2,T0016,footed,narrow,tongue_body,152,185.78,80,14.6
-F2,T0017,unfooted,narrow,tongue_tip,112,70.94,80,3.6
 F2,T0018,unfooted,broad,tongue_body,140,163.03,68,12.5
 F2,T0019,unfooted,broad,lower_lip,52,98.3,32,3.3
 F2,T0020,unfooted,background,tongue_tip,92,95.66,52,5.2
@@ -104,7 +103,6 @@ F2,T0105,footed,contrastive,tongue_body,136,105.61,72,8.9
 F2,T0107,footed,background,tongue_tip,96,135.83,72,4.5
 F2,T0108,unfooted,broad,tongue_body,124,86.32,64,6.7
 F2,T0109,footed,narrow,tongue_tip,104,161.89,84,4.9
-F2,T0110,footed,background,tongue_body,120,64.07,60,4
 F2,T0111,footed,narrow,tongue_body,156,82.7,104,7.5
 F2,T0112,unfooted,background,tongue_body,184,103.96,84,10.5
 F2,T0113,footed,background,lower_lip,60,97.4,36,3.6
@@ -125,9 +123,7 @@ F2,T0128,unfooted,narrow,tongue_tip,52,87.98,36,2.6
 F2,T0129,unfooted,contrastive,tongue_body,128,93.46,60,7.5
 F2,T0130,unfooted,broad,lower_lip,72,53.63,36,2.7
 F2,T0131,footed,contrastive,lower_lip,88,87.52,36,5
-F2,T0132,unfooted,contrastive,tongue_tip,104,80.32,72,3.7
 F2,T0133,unfooted,background,lower_lip,48,45.3,28,1.6
-F2,T0134,footed,background,lower_lip,104,79.67,48,4.6
 F2,T0134,footed,background,lower_lip,104,79.67,48,4.6
 F2,T0135,footed,contrastive,tongue_tip,76,154.72,52,5
 F2,T0136,footed,background,tongue_body,128,128.98,68,10.2

@@ -59,7 +59,10 @@ all_plot <- ggarrange(all_gdur_fig,
                         ncol = 2, nrow = 2, 
                         common.legend = T, legend="bottom")
 all_plot <- annotate_figure(all_plot,
-                              top = text_grob("F2 Lower Lip Data", color = "black", face = "bold", size = 14))
+                            top = text_grob("Overall Data Summary", 
+                                            color = "black", 
+                                            face = "bold", 
+                                            size = 14))
 
 pdf("figures/all_plot.pdf")
 all_plot
