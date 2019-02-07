@@ -64,10 +64,11 @@ mdisp_aov_tukey$Place
 # tb-tt = 4.52mm
 
 # Place:Footedness
-all_stats %>%
+mdisp_place_foot <- all_stats %>%
   group_by(Footedness, Place) %>%
   summarize(MDISP_mean = mean(MDISP)) %>%
   spread(Place, MDISP_mean)
+mdisp_place_foot
 # ll:f-ll:unf = 1.38mm
 # tt:f-tt:unf = -0.37mm
 # tb:f-tb:unf = 0.52mm
@@ -98,10 +99,11 @@ t2pvel_aov_tukey$Info_str
 # tb-tt: 8.24ms
 
 # Place:Info_str
-all_stats %>%
+t2pvel_place_info <- all_stats %>%
   group_by(Place, Info_str) %>%
   summarize(T2PVEL_mean = mean(T2PVEL)) %>%
   spread(Place, T2PVEL_mean)
+t2pvel_place_info
 # ll:n-0 = 2.3ms
 # tt:c-b = 23.9ms
 # tb:c-b = 12.9ms
