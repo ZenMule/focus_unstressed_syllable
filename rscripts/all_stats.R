@@ -31,7 +31,6 @@ gdur_aov_sum
 gdur_aov_tukey <- TukeyHSD(gdur_aov)
 gdur_aov_tukey$Info_str
 gdur_aov_tukey$Place
-gdur_aov_tukey$`Info_str:Place` 
 # c-0 : 9.40ms longer
 # c-b : 15.70ms longer
 # tt-ll: 8.04ms longer
@@ -64,13 +63,14 @@ mdisp_aov_tukey$Place
 # tb-ll = 5.31mm
 # tb-tt = 4.52mm
 
+# Place:Footedness
 all_stats %>%
   group_by(Footedness, Place) %>%
   summarize(MDISP_mean = mean(MDISP)) %>%
   spread(Place, MDISP_mean)
 # ll:f-ll:unf = 1.38mm
-# tt:f-tt:unf = -37mm
-# tb:f-tb:unf = 0.62mm
+# tt:f-tt:unf = -0.37mm
+# tb:f-tb:unf = 0.52mm
 
 ## PVEL ####
 pvel_aov <- aov(PVEL ~ Info_str * Footedness * Place, data = all_stats)
@@ -97,6 +97,7 @@ t2pvel_aov_tukey$Info_str
 # tb-ll: 21.56ms
 # tb-tt: 8.24ms
 
+# Place:Info_str
 all_stats %>%
   group_by(Place, Info_str) %>%
   summarize(T2PVEL_mean = mean(T2PVEL)) %>%

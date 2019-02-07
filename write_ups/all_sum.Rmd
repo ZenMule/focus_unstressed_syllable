@@ -1,0 +1,37 @@
+---
+title: "Overall analysis"
+author: "Miao Zhang"
+date: "2/6/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+load("all_environment.RData")
+```
+
+# 1. Overall kinematic analysis 
+
+```{r maximum displacement, fig.align="center"}
+all_plot
+```
+
+## 1.1. Main effect of information structure
+The figure above displays the boxplot for the kinematic measures across 2 speakers. I found a main effect of Focus Structure on *gesture duration*: F(3, 286) = 8.60 (p < .05), *maximum displacement*: F(3, 286) = 6.82 (p < .05), and *time-to-peak velocity* (stiffness): F(3, 286) = 6.12 (p < .05) but not for *peak velocity* (p > .05).  
+
+*Across-accentuation*, I observed longer, larger and less stiff movements when comparing the maximally diverging focus structures background and contrastive focus, i.e. the opening gesture, across the 3 different articulators , increased on average 9.4 ms in *duration*, 1.14 mm in *displacement*, and 6.34ms in *peak velocity*, while *peak velocity* remained the same. However, when comparing background to broad and narrow focus, no significant differences were confirmed.
+
+*Within-accentuation*, I also found different effects of Focus Structure on the kinematic measures. *Duration* and *displacement* of the gesture increased in from *broad* to *contrastive focus* (15.7ms longer, 1.37mm larger, and 9,84ms longer time-to-peak velocity). However, when comparing adjacent focus structures, i.e., broad vs. narrow, and narrow vs. contrastive focus, the only difference was found in narrow vs. contrastive focus with an average only 0.85mm increase in displacement.
+
+## 1.2. Main effect of place of articulation
+The main factor *Place of Articulation* affects all the kinematic measures: *duration*: F(2, 286) = 204.50 (p < .05); post-hoc: /k/ > /t/ > /p/, *displacement*: F(2, 286) = 208.58 (p < .05); post-hoc: /k/ > /t/ > /p/, *peak velocity*: F(2, 286) = 25.1498 (p < .05); post-hoc: /k/ > /t/ > /p/, *time-to-peak velocity (stiffness)*: F(2, 286) = 59.41 ( p < .05); post-hoc: /k/ > /t/ > /p/.
+
+## 1.3. Main effect of footedness
+The main effect of *Footedness* reached the level of significance in *displacement* (F(1, 286) = 4.36 (p < .05); post-hoc: footed 0.48mm larger than unfooted), *peak velocity* (F(1, 286) = 4.09 (p < .05); post-hoc: footed 8.23mm/s faster than unfooted).
+
+## 1.4. Interactions
+Furthermore, the analysis revealed an interaction between the main factors *Information Structure* and *Place of articulations* in *gesture durations* (F(6, 286) = 2.56 (p <. 05)), and *time-to-peak velocity* (F(6, 286) = 3.34 (p < .05)). The Tukey HSD post-hoc test revealed that the greatest modification of duration for *lower lip* comes from c-0 comparison with an average increase of 6.4ms, while for *tongue tip* and *tongue body*, the greatest modification comes from c-b comparisons with an average increase of 26.2ms and 18ms, respectively. With respect to *time-to-peak velocity*, the greatest differeces for lower lip comes from comparing narrow and background context (2.3ms later in narrow focus), while for tongue tip and tongue body, the greatest increase was found in comparing contrastive and broad focus (23.9ms and 12.9ms respectively).
+
+The intercation between *place* and *footedness* was also found significant in displacement (F(2, 286) = 5.08 (p < .05)). When put in footed context, lowe lip and tongue body moved 1.38mm and 0.52mm larger, whereas tongue tip moved 0.37mm smaller.
+
+# 2. By-speaker analysis

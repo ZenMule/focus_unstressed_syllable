@@ -9,10 +9,10 @@ all_unf_fig <- all_unf
 all_fig <- all
 
 ## SET COLORS ####
-colors_place <- brewer.pal(3, "Blues")
-color_lp <- colors_place[1]
-color_alv <- colors_place[2]
-color_vl <- colors_place[3]
+colors_place <- brewer.pal(5, "Set1")
+color_lp <- colors_place[2]
+color_alv <- colors_place[3]
+color_vl <- colors_place[5]
 
 ## FIGURES ####
 # plot gesture duration
@@ -47,7 +47,7 @@ all_mdisp_fig <- all_fig %>%
   ggplot(aes(Info_str, MDISP)) + 
   geom_boxplot(aes(fill = Place)) +
   labs(x="Information Structure", 
-       y="Maximum Displacement (mm)") +
+       y="Displacement (mm)") +
   scale_fill_manual(values=c(color_lp, color_alv, color_vl)) +
   facet_wrap(~ Footedness)
 
