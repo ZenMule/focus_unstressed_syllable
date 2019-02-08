@@ -1,12 +1,16 @@
 ---
-title: "Overall analysis"
+title: "Data analysis"
 author: "Miao Zhang"
 date: "2/6/2019"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(knitr)
+opts_chunk$set(echo = FALSE)
 load("all_environment.RData")
 ```
 
@@ -22,8 +26,8 @@ The main factor *Place of Articulation* also has an effect on *gesture duration*
 
 The interaction between *place of articulation* and *information_structure* was confirmed significant (F(6, 286) = 2.56, p <. 05). While the greatest increase for *lower lip* is between *contrastive focus* and *background* (6.4ms longer), the largest differences for *tongue tip* and *tongue body* come from comparing *contrastive focus* and *broad focus* (26.2ms and 18ms longer, respectively). 
 
-```{r gdur place:info_str}
-gdur_info_place
+```{r gdur place:info_str, results = 'asis'}
+kable(gdur_info_place, caption="Table 1.1. Interaction between place of Articulation and information structure in gesture duration")
 ```
 
 Effects of *Footedness* on *gesture duration* failed to reach the level of significance. 
@@ -41,8 +45,8 @@ Comparing the two *footedness* condition, the movement under footed conditions o
 
 The interaction of *place* and *footedness* reached the level of significance (F(2, 286) = 5.075 (p < .01)).
 
-```{r mdisp place:footedness}
-mdisp_place_foot
+```{r mdisp place:footedness, results='asis'}
+kable(mdisp_place_foot, caption = "Table 1.2. Interaction between footedness and place of articulation in displacement")
 ```
 
 As can be seen from the table, whereas for *lower lip* and *tongue body*, the articulators moved larger from unfooted condition to footed condition, *tongue tip* moved smaller.
@@ -65,11 +69,26 @@ The *place of articulation* again is significant (F(2, 286) = 59.41 ( p < .05); 
 
 There was also an interaction between *place of articulation* and *information structure* (F(6, 286) = 3.34, p < .01). The greatest modification in articulation for lower lip comes from comparing narrow and background context (2.3ms later in narrow focus), while for tongue tip and tongue body, the greatest increase was found in comparing contrastive and broad focus (23.9ms and 12.9ms respectively).
 
-```{r t2pvel place:footedness}
-t2pvel_place_info
+```{r t2pvel place:footedness, results='asis'}
+kable(t2pvel_place_info, caption="Table 1.3. Interaction between information structure and place of articulation")
 ```
 
 # 2. By-speaker analysis
 There is a huge inter-speaker variation observed from the data. A series of two-way ANOVAs taking *information structure* and *footedness* as the independent variables was run by each speaker for each kinematic measurement. The table below summarises the result of the analysis by speakers. 
 
-to be continued...
+Table 2.1. Across-accentuation by-speaker comparison
+-------------------------------------------------------------------------------------------------------
+Speaker|C vs 0|      |      |          |B vs 0|      |      |          |N vs 0|      |      |        
+-------|------|------|------|----------|------|------|------|----------|------|------|------|----------
+-------|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
+F1     |/t/   |/t/   |-     |/t/|      |-     |-     |-     |-         |-     |-     |-     |-         
+F2     |-     |/p/   |/p/   |          |-     |/t/   |-     |-         |-     |-     |-     |- 
+
+Table 2.2. Within-accentuation by-speaker comparison
+-------------------------------------------------------------------------------------------------------
+Speaker|C vs B|      |      |          |C vs N|      |      |          |N vs B|      |      |      
+-------|------|------|------|----------|------|------|------|----------|------|------|------|----------
+-------|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
+F1     |/t/   |/t/   |-     |/t/       |/t/   |/t/   |-     |/t/       |-     |-     |-     |/t/        
+F2     |-     |/t/   |/t/   |-         |-     |-     |-     |-         |-     |-     |-     |-      
+
