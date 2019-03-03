@@ -3,7 +3,7 @@ library(tidyverse)
 library(ggpubr)
 library(RColorBrewer)
 
-## LOAD THE DATA FOR F2 ####
+## LOAD THE DATA FOR F1 ####
 f2_fig <- f2
 
 ## SET THE COLORS ####
@@ -68,7 +68,7 @@ f2_t2pvel_fig <- f2_fig %>%
 f2_plot <- ggarrange(f2_gdur_fig, 
                      f2_mdisp_fig, 
                      f2_pvel_fig, 
-                     f1_t2pvel_fig, 
+                     f2_t2pvel_fig, 
                      ncol = 2, nrow = 2, 
                      common.legend = T,
                      legend = "bottom")

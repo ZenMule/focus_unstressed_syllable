@@ -3,6 +3,7 @@ title: "Data analysis"
 author: "Miao Zhang"
 date: "2/6/2019"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -27,7 +28,7 @@ The main factor *Place of Articulation* also has an effect on *gesture duration*
 The interaction between *place of articulation* and *information_structure* was confirmed significant (F(6, 286) = 2.56, p <. 05). While the greatest increase for *lower lip* is between *contrastive focus* and *background* (6.4ms longer), the largest differences for *tongue tip* and *tongue body* come from comparing *contrastive focus* and *broad focus* (26.2ms and 18ms longer, respectively). 
 
 ```{r gdur place:info_str, results = 'asis'}
-kable(gdur_info_place, caption="Table 1.1. Interaction between place of Articulation and information structure in gesture duration")
+kable(gdur_info_place, caption="Interaction between place of Articulation and information structure in gesture duration")
 ```
 
 Effects of *Footedness* on *gesture duration* failed to reach the level of significance. 
@@ -46,7 +47,7 @@ Comparing the two *footedness* condition, the movement under footed conditions o
 The interaction of *place* and *footedness* reached the level of significance (F(2, 286) = 5.075 (p < .01)).
 
 ```{r mdisp place:footedness, results='asis'}
-kable(mdisp_place_foot, caption = "Table 1.2. Interaction between footedness and place of articulation in displacement")
+kable(mdisp_place_foot, caption = "Interaction between footedness and place of articulation in displacement")
 ```
 
 As can be seen from the table, whereas for *lower lip* and *tongue body*, the articulators moved larger from unfooted condition to footed condition, *tongue tip* moved smaller.
@@ -70,25 +71,51 @@ The *place of articulation* again is significant (F(2, 286) = 59.41 ( p < .05); 
 There was also an interaction between *place of articulation* and *information structure* (F(6, 286) = 3.34, p < .01). The greatest modification in articulation for lower lip comes from comparing narrow and background context (2.3ms later in narrow focus), while for tongue tip and tongue body, the greatest increase was found in comparing contrastive and broad focus (23.9ms and 12.9ms respectively).
 
 ```{r t2pvel place:footedness, results='asis'}
-kable(t2pvel_place_info, caption="Table 1.3. Interaction between information structure and place of articulation")
+kable(t2pvel_place_info, caption="Interaction between information structure and place of articulation")
 ```
 
 # 2. By-speaker analysis
-There is a huge inter-speaker variation observed from the data. A series of two-way ANOVAs taking *information structure* and *footedness* as the independent variables was run by each speaker for each kinematic measurement. The table below summarises the result of the analysis by speakers. 
+There is a huge inter-speaker variation observed from the data. A series of two-way ANOVAs taking *information structure* and *footedness* as the independent variables was run by each speaker for each kinematic measurement. The table below summarises the result of the analysis by speakers. Since the interaction between information structure and footedness was not confirmed statistically, in the by-speaker analysis below, the result involving footedness will not be reported below.
 
-Table 2.1. Across-accentuation by-speaker comparison
+Table 4. Across-accentuation by-speaker comparison
 -------------------------------------------------------------------------------------------------------
-Speaker|C vs 0|      |      |          |B vs 0|      |      |          |N vs 0|      |      |        
+Speaker|C-0   |      |      |          |N-0   |      |      |          |B-0   |      |      |        
 -------|------|------|------|----------|------|------|------|----------|------|------|------|----------
--------|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
+|      |Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
 F1     |/t/   |/t/   |-     |/t/|      |-     |-     |-     |-         |-     |-     |-     |-         
 F2     |-     |/p/   |/p/   |          |-     |/t/   |-     |-         |-     |-     |-     |- 
 
-Table 2.2. Within-accentuation by-speaker comparison
+Table 5. Within-accentuation by-speaker comparison
 -------------------------------------------------------------------------------------------------------
-Speaker|C vs B|      |      |          |C vs N|      |      |          |N vs B|      |      |      
+Speaker|C-B   |      |      |          |C-N   |      |      |          |N-B   |      |      |      
 -------|------|------|------|----------|------|------|------|----------|------|------|------|----------
--------|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
+|      |Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
 F1     |/t/   |/t/   |-     |/t/       |/t/   |/t/   |-     |/t/       |-     |-     |-     |/t/        
 F2     |-     |/t/   |/t/   |-         |-     |-     |-     |-         |-     |-     |-     |-      
 
+# 2.1. Effects of information structures
+From the two tables above, it's quite clear that significant modifications in kinematic measurements are present in the comparisons between contrastive focus condition and other focus contexts. F1 displayed siginificant modified movement comparing contrastive focus to all other focus conditions and F2 also showed modification in comparing contrastive focus to background and broad focus contexts. There was some sporadic modification seen in both F1 and F2 when comparing focus conditions that don't include contrastive focus though, only one measurement of one of the articulators were affected (for F2, N vs 0, for F1, N vs B).  
+
+This observation seems to conform to what was suggested in Mucke & Grice (2014) that it is prominence rather than accentuation that leads to modification in supralaryngeal articulation. The effect of information structures is still very salient despite that in my data, the target gestures are in unstressed syllables where the vowels undergo reduction and become schwas. This might further suggest that the effect of prominence-related articulatory modification is not to be considered as bound with accentuation since unstressed syllables do not get the pitch accents docked onto them, not even pre-nuclear pitch accents.
+
+# 2.2. Effects of places of articulation
+It is evident from the data above that not all articulators are affected equally by the information structures for the speakers. Tongue body failed to display any disernible modifications in any kind of conditions. Lower lip is influenced only for F2 in the comparison between contrastive focus and background. In contrast, tongue tip seemed to have been influenced largely by information structure. Both speaker modified the movement of tongue tip to some extent in certain focus conditions. The modification of tongue tip is seen in C vs 0, C vs B, and C vs N comparisons for F1, and C vs B comparison for F2.
+
+# 2.3. Articulatory strategies
+F1 and F2 differ in terms of the strategy they make use of to modifying articulation in response to the change (increase) in prominence. In cases where there were significant articulatory modifications, F1 consistantly made longer, larger and less stiff but not faster movements, whereas F2 consistantly made larger and faster movements but neither longer nor faster. This indicates that while F2 tend to use rescaling (changing maximum displacement and peak velocity) as the strategy to modify articulation, F1 tend to use a combined strategy of stiffness modification (changing time-to-peak velocity and duration) and truncation (changing gesture duration and maximum displacement). Important is that although interspeaker variability was huge, within each speaker, the strategy being used is highly consistant, even though speaker may apply the same strategy to different articulators as seen in the case of F2.
+
+# 3. Summary
+1. Supralaryngeal articulation is influenced by information structure, place of articulation and footedness even when the target gesture is in unstressed syllables which are subjects to reduction in English.
+2. Prominence rather than accentuation leads to articulatory modification. 
+3. While footedness did have influence on articulation, it does not interfere with the effect of information structure.
+4. In unstressed syllables, not all gestures are equally affected by information structure. Tongue body movement were largely unaffected probably due to that tongue body is a much less flexible articulator compared to tongue tip and lower lip.
+5. There is a clear interspeaker variability in terms of which kind of articulatory strategy is being used to achieve the modification of supralaryngeal articulation, however, intraspeaker consistency is also very evident.
+
+# Appendix 1. The kinematic measurements of each speaker
+```{r f1_plot, fig.align="center"}
+f1_plot
+```
+
+```{r f2_plot, fig.align="center"}
+f2_plot
+```

@@ -1,4 +1,4 @@
-Subject_id,Trial_num,Footedness,Info_str,Place,GDUR,PVEL,T2PVEL,MDISP
+Subject_id,Trial_id,Footedness,Info_str,Place,GDUR,PVEL,T2PVEL,MDISP
 F1,T0004,footed,background,tongue_tip,68,37.18,20,1.9
 F1,T0007,footed,narrow,tongue_tip,56,71.32,20,2.7
 F1,T0015,unfooted,narrow,tongue_tip,40,31.13,24,0.9

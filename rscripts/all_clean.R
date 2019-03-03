@@ -1,31 +1,39 @@
 ## LOAD THE PACKAGE ####
 library(tidyverse)
+library(car)
+library(readbulk)
 
 ## READ IN DATA ####
-f1 <- read_csv("data/f1_data.csv")
-f2 <- read_csv("data/f2_data.csv")
-all <- rbind(f1, f2)
+files <- list.files(path = "data/", pattern = "*.csv")
+data_raw <- lapply(paste("data/", files, sep=""), read_csv) %>% bind_rows()
+data_raw
 
-# clean the data
-all <- all %>% mutate( # refactor all the categorical variables
-  Footedness = factor(Footedness, levels = c("unfooted", "footed")),
-  Info_str = factor(Info_str, levels = c("background", "broad", "narrow", "contrastive"), labels = c("bck", "brd", "nrw", "cntr")),
-  Place = factor(Place, levels = c("lower_lip", "tongue_tip", "tongue_body")),
-  Subject_id = factor(Subject_id),
-  Trial_num = factor(Trial_num)
-) %>%
-  select(-Trial_num) 
-all <- all %>%
+## DATA CLEANING ####
+data_clean <- data_raw %>%
+  select(-Trial_id) %>%
+  mutate( # refactor all the categorical variables
+    Footedness = factor(Footedness, levels = c("unfooted", "footed"), labels = c("Unfooted", "Footed")),
+    Info_str = factor(Info_str, levels = c("background", "broad", "narrow", "contrastive"), labels = c("Bck", "Brd", "Nrw", "Cntr")),
+    Place = factor(Place, levels = c("lower_lip", "tongue_tip", "tongue_body"), labels = c("Lower lip", "Tongue tip", "Tongue body")),
+    Subject_id = factor(Subject_id)
+  ) %>%
   rename(Speaker = Subject_id)
+data_clean
 
+# how many observations being analyzed?
+total_tokens <- nrow(data_clean)
 
-# create separate data sets for Footedness conditions
-all_unf <- filter(all, Footedness == "unfooted")
-all_f <- filter(all, Footedness == "footed")
+# outliers
+qqPlot(lm(GDUR ~ Speaker * Info_str * Place * Footedness, data = data_clean))
+qqPlot(lm(MDISP ~ Speaker * Info_str * Place * Footedness, data = data_clean))
+qqPlot(lm(PVEL ~ Speaker * Info_str * Place * Footedness, data = data_clean))
+qqPlot(lm(T2PVEL ~ Speaker * Info_str * Place * Footedness, data = data_clean))
 
 # save all data
-write_csv(all, "data/all_data.csv")
+write_csv(data_clean, "data/all_speaker_data.csv")
 
 # make separate datasets for each speakers
-f1 <- filter(all, Speaker == "F1")
-f2 <- filter(all, Speaker == "F2")
+f1 <- filter(data_clean, Speaker == "F1")
+f2 <- filter(data_clean, Speaker == "F2")
+m1 <- filter(data_clean, Speaker == "M1")
+m2 <- filter(data_clean, Speaker == "M2")
