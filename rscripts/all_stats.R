@@ -1,13 +1,13 @@
 ## LOAD PACKAGES ####
 library(tidyverse)
-library(car)
+library(ez)
 
 ## PREPARE THE DATASETS FOR STATS ANALYSIS ####
 data_stats <- data_clean
 summary(data_stats)
 
 ## Gesture Duration ####
-gdur_aov <- aov(GDUR ~ Info_str * Footedness * Place * Speaker, data = data_stats)
+gdur_aov <- aov(GDUR ~ Info_str * Place * Footedness * Speaker, data = data_stats)
 gdur_aov_sum <- summary(gdur_aov)
 gdur_aov_sum
 # Info_str  (F(3, 531) = 4.11, p < .01)
