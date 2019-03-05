@@ -34,6 +34,10 @@ gdur_all_fig <- gdur_fig %>%
           plot.title = tc) 
 gdur_all_fig  
 
+pdf("figures/gdur_all_fig.pdf")
+gdur_all_fig
+dev.off()
+
 ## displacement ####
 # 95% CI
 disp_fig <- data_fig %>%
@@ -56,7 +60,11 @@ disp_all_fig <- disp_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) 
-disp_all_fig  
+disp_all_fig 
+
+pdf("figures/disp_all_fig.pdf")
+disp_all_fig
+dev.off()
 
 ## peak velocity ####
 # 95% CI
@@ -82,6 +90,10 @@ pvel_all_fig <- pv_fig %>%
         plot.title = tc) 
 pvel_all_fig 
 
+pdf("figures/pvel_all_fig.pdf")
+pvel_all_fig
+dev.off()
+
 ## time to peak velocity ####
 # 95% CI
 t2pv_fig <- data_fig %>%
@@ -106,13 +118,17 @@ t2pv_all_fig <- t2pv_fig %>%
         plot.title = tc) 
 t2pv_all_fig 
 
+pdf("figures/t2pv_all_fig.pdf")
+t2pv_all_fig
+dev.off()
+
 ## 4 in 1 ####
 all_arr <- ggarrange(gdur_all_fig, 
-                      disp_all_fig, 
-                      pvel_all_fig, 
-                      t2pv_all_fig, 
-                      ncol = 2, nrow = 2, 
-                      common.legend = T, legend="bottom")
+                     disp_all_fig, 
+                     pvel_all_fig, 
+                     t2pv_all_fig, 
+                     ncol = 2, nrow = 2, 
+                     common.legend = T, legend="bottom")
 all_arr
 all_plot <- annotate_figure(all_arr,
                             top = text_grob("Means and 95% CIs for the kinematic measures", 

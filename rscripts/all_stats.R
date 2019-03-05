@@ -68,6 +68,9 @@ disp_place.ft_fig <- ggplot(disp_pl.ft, aes(Footedness, DISP_mean, ymax = DISP_m
   theme_bw() + 
   theme(plot.title = tc)
 
+pdf("figures/disp_pl.ft_fig.pdf")
+disp_place.ft_fig
+dev.off()
 
 ## Peak velocity ####
 pvel_aov <- aov(PVEL ~ Info_str * Footedness * Place * Speaker, data = data_stats)
@@ -111,6 +114,10 @@ pv_pl.ft_fig <- ggplot(pv_pl.ft, aes(Footedness, PV_mean, ymax = PV_max, ymin = 
   theme_bw() + 
   theme(plot.title = tc)
 
+pdf("figures/pv_pl.ft_fig.pdf")
+pv_pl.ft_fig
+dev.off()
+
 ## T2PVEL ####
 t2pvel_aov <- aov(T2PVEL ~ Info_str * Footedness * Place * Speaker, data = data_stats)
 t2pvel_aov_sum <- summary(t2pvel_aov)
@@ -151,7 +158,10 @@ t2pvel_pl.inf_fig <- t2pvel_pl.inf %>%
          y="ms") +
     theme_bw() +
     theme(plot.title=tc)
+
+pdf("figures/t2pvel_pl.inf_fig.pdf")
 t2pvel_pl.inf_fig
+dev.off()
 
 # Ft:Pl
 t2pvel_ft.pl <- data_stats %>%
@@ -172,3 +182,7 @@ t2pvel_ft.pl_fig <- t2pvel_ft.pl %>%
   theme_bw() +
   theme(plot.title=tc)
 t2pvel_ft.pl_fig
+
+pdf("figures/t2pvel_ft.pl_fig")
+t2pvel_ft.pl_fig
+dev.off()
