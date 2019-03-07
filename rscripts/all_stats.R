@@ -1,6 +1,7 @@
 ## LOAD PACKAGES ####
 library(tidyverse)
 library(ez)
+library(effsize)
 
 ## PREPARE THE DATASETS FOR STATS ANALYSIS ####
 data_stats <- data_clean
@@ -37,7 +38,6 @@ data_ft_sum <- data_stats %>%
 gdur_aov <- aov(GDUR ~ Info_str * Place * Footedness * Speaker, data = data_stats)
 gdur_aov_sum <- summary(gdur_aov)
 gdur_aov_sum
-
 # post-hoc test
 gdur_aov_tukey <- TukeyHSD(gdur_aov)
 gdur_aov_tukey$Info_str
@@ -162,6 +162,6 @@ t2pvel_ft.pl_fig <- t2pvel_ft.pl %>%
   theme(plot.title=tc)
 t2pvel_ft.pl_fig
 
-pdf("figures/t2pvel_ft.pl_fig")
+pdf("figures/t2pvel_ft.pl_fig.pdf")
 t2pvel_ft.pl_fig
 dev.off()

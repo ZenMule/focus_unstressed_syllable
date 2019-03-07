@@ -3,6 +3,7 @@ library(tidyverse)
 library(car)
 library(lme4)
 library(ez)
+library(effsize)
 
 ## PREPARE THE DATASETS FOR STATS ANALYSIS ####
 data_stats <- data_clean
@@ -67,8 +68,8 @@ TukeyHSD(aov(MDISP ~ Info_str * Footedness, data = f1_tt))              # cntr-b
 f1_tb_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = f1_tb))
 
 # F2
-f2_ll_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = f2_ll)) # Info*
-TukeyHSD(aov(MDISP ~ Info_str * Footedness, data = f2_ll))              # nrw-bck, cntr-bck, 
+f2_ll_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = f2_ll)) # Info* Ft#
+TukeyHSD(aov(MDISP ~ Info_str * Footedness, data = f2_ll))              # nrw-bck, cntr-bck, ft > unf
 f2_tt_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = f2_tt)) # Info+
 TukeyHSD(aov(MDISP ~ Info_str * Footedness, data = f2_tt))              # cntr-brd
 f2_tb_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = f2_tb))
@@ -87,7 +88,7 @@ m2_tb_disp <- summary(aov(MDISP ~ Info_str * Footedness, data = m2_tb))
 ## Peak velocity ####
 # F1
 f1_ll_pv <- summary(aov(PVEL ~ Info_str * Footedness, data = f1_ll)) # Ft+
-f1_tt_pv <- summary(aov(PVEL ~ Info_str * Footedness, data = f1_tt)) # Ft+
+f1_tt_pv <- summary(aov(PVEL ~ Info_str * Footedness, data = f1_tt)) 
 f1_tb_pv <- summary(aov(PVEL ~ Info_str * Footedness, data = f1_tb)) # Ft+
 
 # F2

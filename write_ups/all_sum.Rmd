@@ -1,7 +1,7 @@
 ---
 title: "Data analysis"
 author: "Miao Zhang"
-date: "2/6/2019"
+date: "3/6/2019"
 output:
   pdf_document: default
   html_document:
@@ -15,83 +15,40 @@ opts_chunk$set(echo = FALSE)
 load("all_environment.RData")
 ```
 
-# 1. Overall kinematic analysis 
-## 1.1. Gesture Duration
-```{r gdur, fig.align="center"}
-all_gdur_fig
+# 1. Overall kinematic analysis
+## 1.1. Overall kinematic measures by information structure
+```{r measures by info_str, fig.align="center"}
+all_plot
 ```
 
-Fig 1. displays the distribution of gesture duration data across 2 speakers in different conditions. I found a main effect of Information Structure on *gesture duration*: F(3, 286) = 8.60 (p < .001). *Across-accentuation*, longer movements were confirmed when comparing the maximally diverging focus structures, i.e., *background* and *contrastive focus*. The duration of opening gesture across the three different articulators increased on average 9.40ms. *Within-accentuation*, opening gestures were averagely 15.7ms longer in *contrastive focus* condition than *background focus* condition.
-
-The main factor *Place of Articulation* also has an effect on *gesture duration* (F(2, 286) = 204.50 (p < .001), post-hoc: /k/ > /t/ > /p/).
-
-The interaction between *place of articulation* and *information_structure* was confirmed significant (F(6, 286) = 2.56, p <. 05). While the greatest increase for *lower lip* is between *contrastive focus* and *background* (6.4ms longer), the largest differences for *tongue tip* and *tongue body* come from comparing *contrastive focus* and *broad focus* (26.2ms and 18ms longer, respectively). 
-
-```{r gdur place:info_str, results = 'asis'}
-kable(gdur_info_place, caption="Interaction between place of Articulation and information structure in gesture duration")
+## 1.2. Overall kinematic measures by information structure
+```{r measures by footedness, fig.align="center"}
+all_ft_plot
 ```
 
-Effects of *Footedness* on *gesture duration* failed to reach the level of significance. 
-
-## 1.2. Maximum Displacement
-```{r mdisp, fig.align="center"}
-all_mdisp_fig
-```
-
-Fig 2. shows the distribution of maximum displacement of the opening gesture in different conditions. I observed larger movements across different *Information structures*: F(3, 286) = 6.82 (p < .001). *Across-accentuation*, the opening gestures are averagely 1.14mm larger in *contrastive focus* than in *background*. *Within-accentuation*, the displacement of gestures increased from *broad focus* to *contrastive focus* for an average of 1.37mm, from *narrow focus* to *contrastive focus* for an average of 0.85mm.
-
-*Place of articulation* again has an effect on displacement (F(2, 286) = 208.58 (p < .001), post-hoc: /k/ > /t/ > /p/).
-
-Comparing the two *footedness* condition, the movement under footed conditions overall is 0.48mm larger than unfooted conditions (F(1, 286) = 4.36 (p < .05)).
-
-The interaction of *place* and *footedness* reached the level of significance (F(2, 286) = 5.075 (p < .01)).
-
-```{r mdisp place:footedness, results='asis'}
-kable(mdisp_place_foot, caption = "Interaction between footedness and place of articulation in displacement")
-```
-
-As can be seen from the table, whereas for *lower lip* and *tongue body*, the articulators moved larger from unfooted condition to footed condition, *tongue tip* moved smaller.
-
-## 1.3. Peak Velocity
-```{r pvel, fig.align="center"}
-all_pvel_fig
-```
-
-No significant differeces due to *information structure* was confirmed but it was statistically close (F(3, 286) = 2.26, p < .1). On the other hand, *footedness* (F(1, 286) = 4.09 (p < .05); post-hoc: 8.23mm/s faster when footed than unfooted) and *place of articulation* (F(2, 286) = 25.1498 (p < .05); post-hoc: /k/ > /t/ > /p/) both have a main effect on how fast the articulators move. Interactions between the three variables were not significant for peak velocity. 
-
-## 1.4. Time-to-Peak Velocity
-```{r t2pvel, fig.align="center"}
-all_t2pvel_fig
-```
-
-An effect of *Information structureand* on *time-to-peak velocity* was observed (F(3, 286) = 6.12 (p < .05)). *Across-accentuatoin*, there is a less stiff movement comparing *contrastive focus* to *background* (6.34ms later). *Within-accentuation* time-to-peak velocity is 9.83ms later in *contrastive focus* than in *broad focus*. Though not significant, the difference between contrastive focus and narrow focus of 5.78ms is just above significant level (p-adjusted = 0.06).
-
-The *place of articulation* again is significant (F(2, 286) = 59.41 ( p < .05); post-hoc: /k/ > /t/ > /p/).
-
-There was also an interaction between *place of articulation* and *information structure* (F(6, 286) = 3.34, p < .01). The greatest modification in articulation for lower lip comes from comparing narrow and background context (2.3ms later in narrow focus), while for tongue tip and tongue body, the greatest increase was found in comparing contrastive and broad focus (23.9ms and 12.9ms respectively).
-
-```{r t2pvel place:footedness, results='asis'}
-kable(t2pvel_place_info, caption="Interaction between information structure and place of articulation")
-```
 
 # 2. By-speaker analysis
-There is a huge inter-speaker variation observed from the data. A series of two-way ANOVAs taking *information structure* and *footedness* as the independent variables was run by each speaker for each kinematic measurement. The table below summarises the result of the analysis by speakers. Since the interaction between information structure and footedness was not confirmed statistically, in the by-speaker analysis below, the result involving footedness will not be reported below.
+For each kinematic measurement, a series of two-way ANOVAs taking *information structure* and *footedness* as the independent variables was run by each speaker and place of articulation. The significance level is set to .05. The p-value for each ANOVA is corrected to p < .004 by dividing the number of ANOVAs for each kinematic measurements (Bonferroni correction). However, bonferroni correction is a highly conservative method of reducing the chance of making a Type I error, and stringent application of bonferroni correction will lead to dramatical loss of statistical power. In this section, results that reached significance at adjusted p-value (marked by \*) and results that failed to reach adjusted p-value but reached the level of p < .05 (marked by \#)were both reported. Since the interaction between information structure and footedness was not significant at all in the overall analysis, the result if not reported here.
 
-Table 4. Across-accentuation by-speaker comparison
+Table 1. Across-accentuation by-speaker comparison(* : p (ANOVA) < adj-p = 0.004, # : p (ANOVA) < .05)
 -------------------------------------------------------------------------------------------------------
 Speaker|C-0   |      |      |          |N-0   |      |      |          |B-0   |      |      |        
 -------|------|------|------|----------|------|------|------|----------|------|------|------|----------
 |      |Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
-F1     |/t/   |/t/   |-     |/t/|      |-     |-     |-     |-         |-     |-     |-     |-         
-F2     |-     |/p/   |/p/   |          |-     |/t/   |-     |-         |-     |-     |-     |- 
+F1     |/t/\* |/t\*  |-     |/t/\*     |-     |-     |-     |-         |-     |-     |-     |-         
+F2     |-     |/p/\* |/p/\# |-         |-     |/p/\* |-     |-         |-     |-     |-     |- 
+M1     |-     |-     |-     |-         |-     |-     |-     |-         |/k/\* |/k/\* |-     |- 
+M2     |/t/\# |-     |-     |-         |-     |-     |-     |-         |-     |-     |-     |- 
 
-Table 5. Within-accentuation by-speaker comparison
+Table 2. Within-accentuation by-speaker comparison (* : p (ANOVA) < adj-p = 0.004, # : p (ANOVA) < .05)
 -------------------------------------------------------------------------------------------------------
 Speaker|C-B   |      |      |          |C-N   |      |      |          |N-B   |      |      |      
 -------|------|------|------|----------|------|------|------|----------|------|------|------|----------
 |      |Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff|Longer|Larger|Faster|Less stiff
-F1     |/t/   |/t/   |-     |/t/       |/t/   |/t/   |-     |/t/       |-     |-     |-     |/t/        
-F2     |-     |/t/   |/t/   |-         |-     |-     |-     |-         |-     |-     |-     |-      
+F1     |/t/\* |/t/\* |-     |/t/\*     |/t/\* |/t/\* |-     |/t/\*     |-     |-     |-     |-        
+F2     |-     |/t/\# |/t/\# |-         |-     |-     |-     |-         |-     |-     |-     |-
+M1     |-     |/k/\* |-     |-         |-     |      |-     |-         |-     |/k/\* |/k/\* |- 
+M2     |-     |-     |-     |-         |-     |-     |-     |-         |-     |-     |-     |- 
 
 # 2.1. Effects of information structures
 From the two tables above, it's quite clear that significant modifications in kinematic measurements are present in the comparisons between contrastive focus condition and other focus contexts. F1 displayed siginificant modified movement comparing contrastive focus to all other focus conditions and F2 also showed modification in comparing contrastive focus to background and broad focus contexts. There was some sporadic modification seen in both F1 and F2 when comparing focus conditions that don't include contrastive focus though, only one measurement of one of the articulators were affected (for F2, N vs 0, for F1, N vs B).  
@@ -110,12 +67,3 @@ F1 and F2 differ in terms of the strategy they make use of to modifying articula
 3. While footedness did have influence on articulation, it does not interfere with the effect of information structure.
 4. In unstressed syllables, not all gestures are equally affected by information structure. Tongue body movement were largely unaffected probably due to that tongue body is a much less flexible articulator compared to tongue tip and lower lip.
 5. There is a clear interspeaker variability in terms of which kind of articulatory strategy is being used to achieve the modification of supralaryngeal articulation, however, intraspeaker consistency is also very evident.
-
-# Appendix 1. The kinematic measurements of each speaker
-```{r f1_plot, fig.align="center"}
-f1_plot
-```
-
-```{r f2_plot, fig.align="center"}
-f2_plot
-```
