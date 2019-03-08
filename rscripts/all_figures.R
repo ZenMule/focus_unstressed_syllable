@@ -4,7 +4,7 @@ library(ggpubr)
 
 ## LOAD OBJECTS ####
 data_fig <- data_clean
-data_fig
+summary(data_fig)
 
 ## SET POSITION FOR TITLE AND DODGE ####
 pd <- position_dodge(width=0.18)
@@ -263,7 +263,7 @@ all_ft_arr <- ggarrange(gdur_ft_fig,
                         common.legend = T, legend="right")
 all_ft_arr
 all_ft_plot <- annotate_figure(all_ft_arr,
-                               top = text_grob("Fig 2. Means and 95% CIs for the kinematic measures by Foot",
+                               top = text_grob("Fig 2. Means and 95% CIs for the kinematic measures by foot structure",
                                                color = "black",
                                                size = 14))
 all_ft_plot
