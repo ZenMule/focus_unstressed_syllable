@@ -5,6 +5,9 @@ library(lme4)
 library(ez)
 library(effsize)
 
+## LOAD THE ENVIRONMENT ####
+load("~/Research/rProjects/QP_data_analyses/all_speaker/write_ups/all_environment.RData")
+
 ## PREPARE THE DATASETS FOR STATS ANALYSIS ####
 data_stats <- data_clean
 summary(data_stats)
