@@ -137,7 +137,7 @@ f1_plot <- annotate_figure(f1_arr,
 f1_plot
 
 pdf("figures/f1_plot.pdf")
-f1_plot
+f1_arr
 dev.off()
 
 ## 2. Place by foot ####
@@ -252,5 +252,5 @@ f1_ft_plot <- annotate_figure(f1_ft_arr,
 f1_ft_plot
 
 pdf("figures/f1_ft_plot.pdf")
-f1_ft_plot
+f1_ft_arr
 dev.off()

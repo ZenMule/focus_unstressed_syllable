@@ -137,7 +137,7 @@ m2_plot <- annotate_figure(m2_arr,
 m2_plot
 
 pdf("figures/m2_plot.pdf")
-m2_plot
+m2_arr
 dev.off()
 
 ## 2. Place by foot ####
@@ -252,7 +252,7 @@ m2_ft_plot <- annotate_figure(m2_ft_arr,
 m2_ft_plot
 
 pdf("figures/m2_ft_plot.pdf")
-m2_ft_plot
+m2_ft_arr
 dev.off()
 
 
