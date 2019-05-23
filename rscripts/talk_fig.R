@@ -15,8 +15,8 @@ gdur_talk <- data_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) +
-  annotate("text", x = 1.5, y = 215, 
-           label = "Contrastive - Background = +8.9%\nContrastive - Broad = +8.1%", 
+  annotate("text", x = 1.5, y = 200, 
+           label = "Contrastive - Background = +8.9%\nContrastive - Broad = +8.1%\nAll*", 
            color = "red2",
            size = 4.8)
 gdur_talk  
@@ -36,8 +36,8 @@ disp_talk <- data_fig %>%
   theme(legend.position = "bottom",
         plot.title = tc) + 
   annotate("text", 
-           x = 1.5, y = 14.2, 
-           label = "Contrastive - Background: +18.8%\nContrastive - Broad: +16.3%", 
+           x = 1.5, y = 13, 
+           label = "Contrastive - Background: +18.8%\nContrastive - Broad: +16.3%\nAll*", 
            color = "red2",
            size = 4.8)
 disp_talk
@@ -55,8 +55,8 @@ pvel_talk <- data_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) +
-  annotate("text", x = 1.2, y = 190, 
-           label = "Contrastive - Background: +12.4%\nContrastive - Broad: +8.4%", 
+  annotate("text", x = 1.2, y = 180, 
+           label = "Contrastive - Background: +12.4%\nContrastive - Broad: +8.4%\nAll*", 
            color = "red2",
            size = 4.8)
 pvel_talk   
@@ -75,8 +75,8 @@ t2pvel_talk <- data_fig %>%
   theme(legend.position = "bottom",
         plot.title = tc) +
   annotate("text", 
-           x = 1.4, y = 147, 
-           label = "Contrastive - Background: +9.7%\nContrastive - Broad: +9.3%\nTongue body(n.s.)", 
+           x = 1.4, y = 140, 
+           label = "Contrastive - Background: +9.7%\nContrastive - Broad: +9.3%\nLower lip*, Tongue tip*", 
            color = "red2",
            size = 4.8)
 t2pvel_talk 
@@ -95,7 +95,7 @@ gdur_ft_talk <- data_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) +
-  annotate("text", x = 1.5, y = 215, label = "Footed - Unfooted: +3.9%", color = "red2", size = 4.8)
+  annotate("text", x = 1.5, y = 200, label = "Footed - Unfooted: +3.9%\nTongue body*", color = "red2", size = 4.8)
 gdur_ft_talk 
 ggsave("figures/gdur_ft_talk.png")
 
@@ -127,7 +127,7 @@ pv_ft_talk <- data_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) + 
-  annotate("text", x = 1.3, y = 180, label = "Footed - Unfooted: +7.8%\nTongue tip(n.s.)", color = "red2", size = 4.8)
+  annotate("text", x = 1.3, y = 180, label = "Footed - Unfooted: +7.8%\nLower lip*, Tongue body*", color = "red2", size = 4.8)
 pv_ft_talk  
 ggsave("figures/pv_ft_talk.png") 
 
@@ -143,6 +143,6 @@ t2pv_ft_talk <- data_fig %>%
   theme_bw() +
   theme(legend.position = "bottom",
         plot.title = tc) +
-  annotate("text", x = 1.5, y = 150, label = "Footed - Unfooted: +5.7%\nTongue Body*", color = "red2", size = 4.8)
+  annotate("text", x = 1.5, y = 140, label = "Footed - Unfooted: +5.7%\nTongue Body*", color = "red2", size = 4.8)
 t2pv_ft_talk  
 ggsave("figures/t2pv_ft_talk.png") 
